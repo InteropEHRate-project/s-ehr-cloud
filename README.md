@@ -29,7 +29,6 @@ The following endpoints can be used by the citizen in order to interact with the
     “token” : JSON Web Token: Citizen’s Authorization token, 
     “emergencyToken” : JSON Web Token: Healthcare Institution emergency token
 }
-
 ```
 
 ### Download consent to allow the S-EHR Cloud provider to store the citizen’s health data in an encrypted format
@@ -48,7 +47,6 @@ The consent that after signing it and re-uploading it on the S-EHR Cloud allows 
 {
    “msg” : String: Consent upload acknowledgement
 }
-
 ```
 
 ### Download consent to allow the S-EHR Cloud provider to share the citizen’s health data with authorized Healthcare Institutions
@@ -68,7 +66,6 @@ The consent that after signing it and re-uploading it on the S-EHR Cloud allows 
    “msg” : String: Consent upload acknowledgement, 
    “emergencyToken” : JSON Web Token: Healthcare Institution emergency token
 }
-
 ```
 
 ### Retrieve a list of the buckets connected to the citizen’s account
@@ -130,7 +127,7 @@ The requested health record in an encrypted binary file format.
 * Description: This operation allows a citizen to send a request to upload an encrypted FHIR Bundle containing health data of the authenticated citizen.
 * Response: 
 ```
-	“msg” : String: Health record upload acknowledgement
+“msg” : String: Health record upload acknowledgement
 ```
 
 ### Revoke the consent that allows the S-EHR Cloud provider to share the citizen’s health data with authorized Healthcare Institutions
@@ -141,7 +138,6 @@ The requested health record in an encrypted binary file format.
 {
     “msg” : String: Consent revocation acknowledgement
 }
-
 ```
 
 ### Remove the account and delete the health data stored in the S-EHR Cloud
@@ -152,7 +148,6 @@ The requested health record in an encrypted binary file format.
 {
     “msg” : String: Account removal acknowledgement
 }
-
 ```
 
 ### Retrieve audit information
