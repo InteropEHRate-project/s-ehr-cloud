@@ -14,7 +14,8 @@ The following endpoints can be used by the citizen in order to interact with the
 
 * Endpoint: `[POST] http://[URL]:5000/citizen/register`
 * Description: This operation allows a citizen to send a request to create an account to a S-EHR Cloud provider. As soon as the account is created, a bucket linked to this account is created as well. This bucket is used to store the encrypted health data of the citizen. 
-* Response: ```
+* Response: 
+```
 {
 “msg” : String: Message related to the citizen’s account creation, 
 }
