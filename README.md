@@ -202,7 +202,7 @@ The requested health record in an encrypted binary file format.
 }
 ```
 ___
-The following endpoints can be utilized by the HCP from trusted Healthcare Institutions in order to perform the following actions: 
+The following endpoints can be utilized by HCPs from trusted Healthcare Institutions in order to perform the following actions: 
 
 ### Request access to a citizen’s health data stored in the S-EHR Cloud
 * Endpoint: `[POST] http://[URL]:5000/hcp/requestaccess`
