@@ -17,20 +17,87 @@ The following endpoints can be used by the citizen in order to interact with the
 * Response: 
 ```
 {
-“msg” : String: Message related to the citizen’s account creation, 
+    “msg” : String: Message related to the citizen’s account creation, 
 }
 ```
 
 ### Login to the S-EHR Cloud
+* Endpoint: `[POST] http://[URL]:5000/citizen/login`
+* Description: This operation allows a citizen to send a request to login to the S-EHR Cloud. 
+* Response: 
+```
+{
+    “token” : JSON Web Token: Citizen’s Authorization token, 
+    “emergencyToken” : JSON Web Token: Healthcare Institution emergency token
+}
+
+```
+
 ### Download consent to allow the S-EHR Cloud provider to store the citizen’s health data in an encrypted format
+* Endpoint: `GET] http://[URL]:5000/citizen/consent/cloud`
+* Description: This operation allows a citizen to send a request to download the consent that allows the S-EHR Cloud to store the citizen’s health data. 
+* Response: 
+```
+The consent that after signing it and re-uploading it on the S-EHR Cloud allows the service to store the citizen’s encrypted health data for backup purposes.
+```
+
 ### Sign the consent to allow the S-EHR Cloud provider to store the citizen’s health data in an encrypted format
+* Endpoint: `[POST] http://[URL]:5000/citizen/consent/cloud`
+* Description: This operation allows a citizen to upload the signed consent that allows the S-EHR Cloud to store the citizen’s health data. 
+* Response: 
+```
+{
+   “msg” : String: Consent upload acknowledgement
+}
+
+```
+
 ### Download consent to allow the S-EHR Cloud provider to share the citizen’s health data with authorized Healthcare Institutions
+* Endpoint: `[GET] http://[URL]:5000/citizen/consent/hco`
+* Description: This operation allows a citizen to send a request to download the consent that allows the S-EHR Cloud to share the citizen’s health data with HCPs from authorized Healthcare Organizations. 
+* Response: 
+```
+The consent that after signing it and re-uploading it on the S-EHR Cloud allows the service to share the citizen’s health data with HCPs from authorized Healthcare Organizations.
+```
+
 ### Sign the consent to allow the S-EHR Cloud provider to share the citizen’s health data with authorized Healthcare Institutions
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Retrieve a list of the buckets connected to the citizen’s account
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Retrieve a list of objects stored in a bucket
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Download metadata information for an encrypted health record
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Download an encrypted health record from the S-EHR Cloud 
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Upload an encrypted health record to the S-EHR Cloud
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Revoke the consent that allows the S-EHR Cloud provider to share the citizen’s health data with authorized Healthcare Institutions
+* Endpoint: 
+* Description: 
+* Response: 
+
 ### Remove the account and delete the health data stored in the S-EHR Cloud
+* Endpoint: 
+* Description: 
+* Response: 
+
 
