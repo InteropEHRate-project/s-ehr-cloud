@@ -26,7 +26,7 @@ def read(*names, **kwargs):
 setup(
     name='sehr_cloud',
     version='1.644.11',
-    license='BSD-2-Clause',
+    license='Apache License v2.0',
     description='S-EHR Cloud service',
     author='Chrysostomos Symvoulidis',
     author_email='csymvoulidis@byte.gr',
