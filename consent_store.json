@@ -1,0 +1,21 @@
+{
+	"resourceType": "Consent",
+	"text": { 
+		"status": "generated",
+		"div":"<div xmlns=\"http://www.w3.org/1999/xhtml\">I have read and understood InteropEHRate's <a href=\"null\">Privacy Policy</a>.\\n\\nI hereby give permission to the recipient S-EHR Cloud provider to store the personal data stored in my encrypted Personal Health Record on this S-EHR Cloud for the purpose of backup. I understand that my consent will remain valid for these purposes unless I affirmatively withdraw it. I have the right to withdraw this consent at any time.</div>"}, 
+	"status":"active", 
+	"category": [{
+		"coding":[{
+			"system": "http://loinc.org",
+			"code":"59284-0",
+			"display": "Patient Consent to store data on S-EHR Cloud"
+		}]
+	}],
+	"dateTime": "",
+	"performer": [{
+			"reference": "S-EHR Cloud Provider"
+	}], 
+	"organization": [{
+			"reference": "S-EHR Cloud Provider"
+	}]
+}
