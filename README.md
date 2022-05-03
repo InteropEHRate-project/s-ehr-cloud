@@ -201,3 +201,80 @@ The requested health record in an encrypted binary file format.
     }
 }
 ```
+___
+The following endpoints can be utilized by the HCP from trusted Healthcare Institutions in order to perform the following actions: 
+
+### Request access to a citizen’s health data stored in the S-EHR Cloud
+* Endpoint: `[POST] http://[URL]:5000/hcp/requestaccess`
+* Description: his operation allows an HCP from a Healthcare Institution to send a request to access the citizen’s health data stored in the S-EHR Cloud during an emergency.
+* Response:
+```
+{
+    “msg” : String: Access Request acknowledgement,
+    “hcoEmergencyToken” : Healthcare Institution Authorization JSON Web Token
+}
+```
+
+### Retrieve a list of the buckets that can be accessed by the Healthcare Institution’s temporary account
+* Endpoint: `[GET] http://[URL]:5000/hcp/buckets`
+* Description: This operation allows an HCP, using their Healthcare Institution’s temporary account, to retrieve the list of the buckets that their account can gain access to.
+* Response: 
+```
+{
+	“buckets” : [
+		String: Bucket Name 1, 
+		String: Bucket Name 2, 
+		...
+	]
+}
+```
+### Retrieve a list of objects stored in a bucket
+* Endpoint: `[GET] http://[URL]:5000/hcp/buckets/{$bucketName}`
+* Description:  This operation allows an HCP, using their Healthcare Institution’s temporary account, to retrieve the list of the objects (i.e. the encrypted health data) stored in a specific bucket.
+* Response: 
+```
+{
+	“bucket” : String: Bucket Name, 
+	“objects” : [
+		"$encryptedHrName1", 
+		"$encryptedHrName2", 
+		...
+	]
+}
+```
+
+### Download metadata information for an encrypted health record
+* Endpoint: `[GET] http://[URL]:5000/hcp/{$bucketName}/{$ResourceCategory}/metadata`
+* Description: This operation allows an HCP, using their Healthcare Institution’s temporary account, to retrieve the metadata of an encrypted health record from the S-EHR Cloud.
+* Response: 
+```
+{
+	“object” : String: Object Name, 
+	“metadata”: {
+		“objectName”: String: Object Name, 
+		“bucketName”: String: Bucket Name,
+		“size”: Float: Size of the object in KB,
+		“type”: String: Object type, 
+		“dateAdded”: Date: Date stored in S-EHR Cloud
+	}
+}
+```
+
+Download an encrypted health record from the S-EHR Cloud 
+* Endpoint: `[GET] http://[URL]:5000/hcp/{$bucketName}/{$ResourceCategory}`
+* Description: This operation allows an HCP, using their Healthcare Institution’s temporary account, to download an encrypted health data record from the S-EHR Cloud and decrypt it locally on the HCP App. 
+* Response: 
+```
+The requested health record in an encrypted binary file format.
+```
+
+Upload an encrypted health record to the S-EHR Cloud
+* Endpoint: `[POST] http://[URL]:5000/hcp/upload?objectName={$ResourceCategory}`
+* Description: This operation allows an HCP, using their Healthcare Institution’s temporary account, to upload an encrypted health data’s information to the S-EHR Cloud. 
+* Response: 
+```
+{
+	“msg” : String: Health record upload acknowledgement
+}
+```
+
